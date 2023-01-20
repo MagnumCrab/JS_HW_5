@@ -121,3 +121,18 @@ for (let i = 0; i < en.length; i++) {
     }
 }
 console.log(arrWeek);
+
+//  6 Создайте объект riddles 
+//  Добавьте свойства question, answer
+//  создайте метод askQuestion который спрашивает у пользователя вопрос question и сравнивает ответ с answer
+//  Если ответил неверно, то в консоль выводится текст: “вы проиграли”
+
+const riddles = {
+  question: 'Whats the difference between here and there?',
+  answer: 't',
+  askQuestion() {         
+    userAnswer = prompt(this.question);
+    return console.log((userAnswer === this.answer) ? 'You win' : 'You loose'); 
+  }
+}
+riddles.askQuestion();
