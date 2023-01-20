@@ -130,9 +130,19 @@ console.log(arrWeek);
 const riddles = {
   question: 'Whats the difference between here and there?',
   answer: 't',
+  hints:['Wrong! Hint: its a letter', 'Wrong! Hint: its a first letter'],
   askQuestion() {         
     userAnswer = prompt(this.question);
-    return console.log((userAnswer === this.answer) ? 'You win' : 'You loose'); 
+    // return console.log((userAnswer === this.answer) ? 'You win' : 'You loose');
+    if (userAnswer !== this.answer) {
+      alert(this.hints[0]);
+      userAnswer = prompt(this.question);
+    } if(userAnswer !== this.answer){
+      alert(this.hints[1]);
+      userAnswer = prompt(this.question);
+    } if(userAnswer !== this.answer){
+      alert('You loose');
+    } else alert('You win');
   }
 }
 riddles.askQuestion();
